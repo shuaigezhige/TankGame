@@ -1,14 +1,14 @@
 package com.practice.tank;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class Bullet {
-    private int x, y;
-
-    private Dir dir;
-
-    private Group group = Group.BAD;
     private static final int SPEED = 6;
+    private int x, y;
+    private Dir dir;
+    private Group group = Group.BAD;
+    private boolean live = true;
 
     public Bullet(int x, int y, Dir dir, Group grp) {
         this.x = x;
@@ -17,8 +17,16 @@ public class Bullet {
         this.group = grp;
     }
 
-    public void paint(Graphics g) {
+    public boolean isLive() {
+        return live;
+    }
 
+    public void setLive(boolean live) {
+        this.live = live;
+    }
+
+    public void paint(Graphics g) {
+        if (!this.isLive()) return;
         switch (dir) {
             case L:
                 g.drawImage(ResourceMgr.bulletL, x, y, null);
@@ -52,5 +60,30 @@ public class Bullet {
                 y += SPEED;
                 break;
         }
+
+        boundsCheck();
+    }
+
+    public void collidesWithTank(Tank tank) {
+        if (!this.isLive() || !tank.isLive()) return;
+        if (this.group == tank.getGrp()) return;
+
+        Rectangle rectBullet = new Rectangle(x, y, ResourceMgr.bulletU.getWidth(), ResourceMgr.bulletU.getHeight());
+        Rectangle rectTank = new Rectangle(tank.getX(), tank.getY(),
+                ResourceMgr.goodTankU.getWidth(), ResourceMgr.goodTankU.getHeight());
+        if (rectBullet.intersects(rectTank)) {
+            this.die();
+            tank.die();
+        }
+    }
+
+    private void boundsCheck() {
+        if (x <= 0 || y <= 30 || x >= TankFrame.GAME_WIDTH || y >= TankFrame.GAME_HEIGHT) {
+            live = false;
+        }
+    }
+
+    public void die() {
+        setLive(false);
     }
 }

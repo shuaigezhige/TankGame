@@ -2,18 +2,16 @@ package com.practice.tank;
 
 public class Main {
     public static void main(String[] args) {
-        TankFrame tf = new TankFrame();
-//        tf.setLocation(400,100);
-//        tf.setSize(800,600);
-        tf.setVisible(true);
+        TankFrame.INSTANCE.setVisible(true);
+        new Thread(() -> new Audio("audio/war1.wav").loop()).start();
         for (; ; ) {
             try {
-                Thread.sleep(20);
+                Thread.sleep(25);
 //                TimeUnit.MILLISECONDS.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            tf.repaint();
+            TankFrame.INSTANCE.repaint();
         }
     }
 }
