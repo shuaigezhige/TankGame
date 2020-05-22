@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TankFrame extends Frame {
     //    private Bullet bullet;
-    public static final int GAME_WIDTH = 800, GAME_HEIGHT = 600;
+    public static final int GAME_WIDTH = Integer.parseInt(String.valueOf(PropertyMgr.get("gameWidth"))), GAME_HEIGHT = Integer.parseInt(String.valueOf(PropertyMgr.get("gameHeight")));
     public static final TankFrame INSTANCE = new TankFrame();
     //    private class TankKeyListener implements KeyListener {
 //        @Override
@@ -101,9 +101,11 @@ public class TankFrame extends Frame {
         bullets = new ArrayList<Bullet>();
         enemies = new ArrayList<Tank>();
         explodes = new ArrayList<Explode>();
-        for (int i = 0; i < 10; i++) {
-            enemies.add(new Tank(200 + 60 * i, 100, Dir.D, Group.BAD));
+        int enimiesCnt = Integer.parseInt(String.valueOf(PropertyMgr.get("initTankCount")));
+        for (int i = 0; i < enimiesCnt; i++) {
+            enemies.add(new Tank(200 + 10 * i, 100, Dir.D, Group.BAD));
         }
+
     }
 
     public void addBullet(Bullet bullet) {

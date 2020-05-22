@@ -10,6 +10,7 @@ public class Explode {
     public Explode(int x, int y) {
         this.x = x;
         this.y = y;
+        new Thread(() -> new Audio("audio/explode.wav").play()).start();
     }
 
     public boolean isExploded() {

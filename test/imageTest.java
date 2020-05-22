@@ -1,8 +1,10 @@
+import com.practice.tank.PropertyMgr;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -51,6 +53,12 @@ public class imageTest {
         graphics2d.drawImage(bufferedimage, 0, 0, null);
         graphics2d.dispose();
         return img;
+    }
+
+    @Test
+    public void test3() {
+
+        System.out.println(PropertyMgr.get("initTankCount"));
     }
 
 }
