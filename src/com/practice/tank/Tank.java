@@ -1,10 +1,11 @@
 package com.practice.tank;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.Random;
 
-public class Tank {
-    public static final int SPEED = 5;
+public class Tank extends AbstractGameObject {
+    public static final int SPEED = 3;
     public static int WIDTH = ResourceMgr.badTankU.getWidth();
     public static int HEIGHT = ResourceMgr.badTankU.getHeight();
     //    TankFrame tf;
@@ -16,6 +17,7 @@ public class Tank {
     private boolean moving = true;
     private boolean live = true;
     private int oldX, oldY;
+    private Rectangle rect;
 
     public Tank(int x, int y, Dir dir, Group grp) {
         this.x = x;
@@ -24,7 +26,16 @@ public class Tank {
         this.grp = grp;
         oldX = x;
         oldY = y;
+        rect = new Rectangle(x, y, WIDTH, HEIGHT);
 //        this.tf = tf;
+    }
+
+    public Rectangle getRect() {
+        return rect;
+    }
+
+    public void setRect(Rectangle rect) {
+        this.rect = rect;
     }
 
     public Group getGrp() {
@@ -81,7 +92,6 @@ public class Tank {
 
     }
 
-
     private void move() {
         if (!moving) return;
         oldX = x;
@@ -122,7 +132,8 @@ public class Tank {
         if (random.nextInt(100) > 90) {
             fire();
         }
-
+        rect.x = x;
+        rect.y = y;
     }
 
     private void randomDir() {
@@ -136,7 +147,7 @@ public class Tank {
 
         int bx = x + ResourceMgr.goodTankU.getWidth() / 2 - ResourceMgr.bulletU.getWidth() / 2;
         int by = y + ResourceMgr.goodTankU.getHeight() / 2 - ResourceMgr.bulletU.getHeight() / 2;
-        TankFrame.INSTANCE.addBullet(new Bullet(bx, by, dir, grp));
+        TankFrame.INSTANCE.add(new Bullet(bx, by, dir, grp));
     }
 
     private void boundsCheck() {
@@ -146,14 +157,15 @@ public class Tank {
         }
     }
 
-    private void back() {
+    public void back() {
         this.x = oldX;
         this.y = oldY;
+
     }
 
     public void die() {
         this.setLive(false);
-        TankFrame.INSTANCE.addExplode(new Explode(x, y));
+        TankFrame.INSTANCE.add(new Explode(x, y));
     }
 
 }

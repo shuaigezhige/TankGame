@@ -1,6 +1,10 @@
 #tanks count at initialization
-initTankCount=50
+initTankCount=8
 tankSpeed=5
 bulletSpeed=10
-gameWidth=1440
+gameWidth=1600
 gameHeight=900
+
+
+TankFireStategy = FourDirectionFireStrategy
+colliders = BulletTankCollider,PlayerTankCollider,TankTankCollider

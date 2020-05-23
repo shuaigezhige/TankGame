@@ -2,17 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04d0a09f-70c0-4e8f-acb1-618975db503d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/PropertyMgr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/audio/explode.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/audio/tank_fire.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/audio/tank_move.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/audio/war1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/AbstractGameObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Audio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Explode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Player$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/PropertyMgr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Wall.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/BulletTankCollider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/BulletWallCollider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/Collider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/ColliderChain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/PlayerTankCollider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/TankTankCollider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/chainofresponsibility/TankWallCollider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/strategy/DefaultStrategy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/strategy/FireStrategy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/strategy/FourDirectionFireStrategy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/strategy/LeftRightFireStrategy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tank2019/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/AbstractGameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/BulletTankCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/BulletWallCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/Collider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/ColliderChain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/PlayerTankCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/TankTankCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/chainofresponsibility/TankWallCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/strategy/DefaultStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/strategy/FireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/strategy/FourDirectionFireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/practice/tank/strategy/LeftRightFireStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Bullet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Bullet$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Tank$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/Tank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/TankFrame$TankKeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/TankFrame$TankKeyListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/com/practice/tank/TankFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank2019/imageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank2019/imageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/practice/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/practice/tank/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/Explode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/practice/tank/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/practice/tank/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/practice/tank/PropertyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/PropertyMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/practice/tank/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/ResourceMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/practice/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/practice/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/practice/tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/imageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/imageTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,6 +68,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -60,22 +104,28 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="J:\Tank2019\src" />
       <recent name="J:\Tank2019" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.practice.tank" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.practice.tank" />
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="strategy" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="J:\Tank2019\src" />
       <recent name="J:\Tank2019\src\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.practice.tank.chainofresponsibility" />
+      <recent name="com.practice.tank.strategy" />
+      <recent name="strategy" />
+      <recent name="com.practice.tank" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.practice.tank" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -150,7 +200,9 @@
       <workItem from="1589943911976" duration="10296000" />
       <workItem from="1589963321742" duration="2557000" />
       <workItem from="1590040882143" duration="31608000" />
-      <workItem from="1590111763627" duration="2192000" />
+      <workItem from="1590111763627" duration="16645000" />
+      <workItem from="1590162763118" duration="7280000" />
+      <workItem from="1590215117272" duration="15552000" />
     </task>
     <task id="LOCAL-00001" summary="add readme.md">
       <created>1589964207876</created>
@@ -173,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590082324729</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit first version">
+      <created>1590114204380</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590114204380</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,16 +260,5 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/practice/tank/Bullet.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

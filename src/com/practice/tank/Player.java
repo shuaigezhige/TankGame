@@ -1,10 +1,14 @@
 package com.practice.tank;
 
-import java.awt.Graphics;
-import java.awt.event.KeyEvent;
+import com.practice.tank.strategy.FireStrategy;
 
-public class Player {
-    public static final int SPEED = 5;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
+import java.lang.reflect.InvocationTargetException;
+
+public class Player extends AbstractGameObject {
+    public static final int SPEED = 3;
     public static int WIDTH = ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT = ResourceMgr.goodTankU.getHeight();
     private Group grp = Group.GOOD;
@@ -13,8 +17,10 @@ public class Player {
     private boolean bL, bU, bR, bD;
     private boolean moving = false;
     private boolean live = true;
-//    TankFrame tf;
-private int oldX, oldY;
+    FireStrategy strategy = null;
+    //    TankFrame tf;
+    private int oldX, oldY;
+    private Rectangle rect;
 
     public Player(int x, int y, Dir dir, Group grp) {
         this.x = x;
@@ -22,6 +28,28 @@ private int oldX, oldY;
         this.dir = dir;
         this.grp = grp;
 //        this.tf = tf;
+        this.initFireStrategy();
+        this.rect = new Rectangle(x, y, WIDTH, HEIGHT);
+    }
+
+    public Rectangle getRect() {
+        return rect;
+    }
+
+    public void setRect(Rectangle rect) {
+        this.rect = rect;
+    }
+
+    public Group getGrp() {
+        return grp;
+    }
+
+    public void setGrp(Group grp) {
+        this.grp = grp;
+    }
+
+    public Dir getDir() {
+        return dir;
     }
 
     public boolean isLive() {
@@ -123,41 +151,8 @@ private int oldX, oldY;
 //        }
     }
 
-    private void move() {
-        if (!moving) return;
-        oldX = x;
-        oldY = y;
-        switch (dir) {
-            case L:
-                x -= SPEED;
-                break;
-            case R:
-                x += SPEED;
-                break;
-            case U:
-                y -= SPEED;
-                break;
-            case D:
-                y += SPEED;
-                break;
-//            case LU:
-//                x -= SPEED;
-//                y -= SPEED;
-//                break;
-//            case LD:
-//                x -= SPEED;
-//                y += SPEED;
-//                break;
-//            case RU:
-//                x += SPEED;
-//                y -= SPEED;
-//                break;
-//            case RD:
-//                x += SPEED;
-//                y += SPEED;
-//                break;
-        }
-        boundsCheck();
+    public void setDir(Dir dir) {
+        this.dir = dir;
     }
 
     private void back() {
@@ -231,16 +226,69 @@ private int oldX, oldY;
             this.back();
         }
     }
+
+    private void move() {
+        if (!moving) return;
+        oldX = x;
+        oldY = y;
+        switch (dir) {
+            case L:
+                x -= SPEED;
+                break;
+            case R:
+                x += SPEED;
+                break;
+            case U:
+                y -= SPEED;
+                break;
+            case D:
+                y += SPEED;
+                break;
+//            case LU:
+//                x -= SPEED;
+//                y -= SPEED;
+//                break;
+//            case LD:
+//                x -= SPEED;
+//                y += SPEED;
+//                break;
+//            case RU:
+//                x += SPEED;
+//                y -= SPEED;
+//                break;
+//            case RD:
+//                x += SPEED;
+//                y += SPEED;
+//                break;
+        }
+        boundsCheck();
+        rect.x = x;
+        rect.y = y;
+    }
+
+    public void initFireStrategy() {
+        ClassLoader loader = Player.class.getClassLoader();
+
+        String clsName = PropertyMgr.get("TankFireStategy");
+        try {
+            Class cls = loader.loadClass("com.practice.tank.strategy." + clsName);
+            strategy = (FireStrategy) cls.getDeclaredConstructor().newInstance();
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void fire() {
-        int bx = x + ResourceMgr.goodTankU.getWidth() / 2 - ResourceMgr.bulletU.getWidth() / 2;
-        int by = y + ResourceMgr.goodTankU.getHeight() / 2 - ResourceMgr.bulletU.getHeight() / 2;
-        TankFrame.INSTANCE.addBullet(new Bullet(bx, by, dir, grp));
+        strategy.fire(this);
+//        int bx = x + ResourceMgr.goodTankU.getWidth() / 2 - ResourceMgr.bulletU.getWidth() / 2;
+//        int by = y + ResourceMgr.goodTankU.getHeight() / 2 - ResourceMgr.bulletU.getHeight() / 2;
+//        TankFrame.INSTANCE.addBullet(new Bullet(bx, by, dir, grp));
         new Thread(() -> new Audio("audio/tank_fire.wav").play()).start();
     }
 
     public void die() {
         this.setLive(false);
-        TankFrame.INSTANCE.addExplode(new Explode(x, y));
+        TankFrame.INSTANCE.add(new Explode(x, y));
     }
 
 }

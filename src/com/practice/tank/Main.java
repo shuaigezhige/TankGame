@@ -6,7 +6,7 @@ public class Main {
         new Thread(() -> new Audio("audio/war1.wav").loop()).start();
         for (; ; ) {
             try {
-                Thread.sleep(25);
+                Thread.sleep(10);
 //                TimeUnit.MILLISECONDS.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
